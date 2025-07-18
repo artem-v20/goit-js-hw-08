@@ -84,12 +84,10 @@ const markup = images
 galleryEl.insertAdjacentHTML('beforeend', markup);
 
 const onClickGalleryImages = e => {
-  if (e.target.nodeName === 'IMG') {
-    e.preventDefault();
-  } else if (e.target.nodeName !== 'IMG') {
+  if (e.target.nodeName !== 'IMG') {
     return;
   }
-
+  e.preventDefault();
   const bigImgSrc = e.target.dataset.source;
 
   const instance = basicLightbox.create(`
